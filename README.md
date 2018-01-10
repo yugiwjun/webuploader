@@ -43,6 +43,7 @@
     line160 ：$saveUrl = '/webUploader/'.date('Ym',time())."/".$hashName;
 
 4.后台通过POST接收数据的name值就是
+    **
     // 初始化上传控件
     $("#uploader").empty();
     var uploader = $("#uploader").powerWebUpload({
@@ -65,3 +66,4 @@
     });
 
     fileName参数的名字
+    **
