@@ -469,25 +469,3 @@
         return filesAddress;
     }
 })(jQuery, window);
-
-
-/**
- * [删除数据记录]
- * @author  [wj]
- * @param   int   附件记录ID
- * @date    [2017-7-7 14:29:37]
- * @version [1.0.0]
- * @return  bool  删除成功或者失败
- */
-function delFile(iFID) {
-    $.post("/j/file/deleteFile.php?id="+iFID, function(result) {
-        if (result.success == true) {
-            alert("删除操作已成功！");
-            $("#fileDiv"+iFID).hide();
-            return true;
-        }
-        else {
-            alert("删除操作失败！");
-        }
-    });
-}
