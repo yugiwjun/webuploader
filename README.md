@@ -41,3 +41,27 @@
     line047 ：$targetDir = UPFILES_STORAGE.DIRECTORY_SEPARATOR.'webUploader'.DIRECTORY_SEPARATOR.date('Ym',time());
     line048 ：$uploadDir = UPFILES_STORAGE.DIRECTORY_SEPARATOR.'webUploader'.DIRECTORY_SEPARATOR.date('Ym',time());
     line160 ：$saveUrl = '/webUploader/'.date('Ym',time())."/".$hashName;
+
+4.后台通过POST接收数据的name值就是
+    // 初始化上传控件
+    $("#uploader").empty();
+    var uploader = $("#uploader").powerWebUpload({
+        // 是否自动上传
+        auto: false,
+        // 隐藏域name的名字，随意
+        fileName: 'jFile',
+        // 最大个数
+        fileNumLimit: 10,
+        // 最大尺寸
+        fileSingleSizeLimit: 500*1024*1024,
+        innerOptions:{
+            // 类型限制
+            accept: {
+                title: 'Files',
+                extensions: 'gif,jpg,jpeg,bmp,png,pdf,mp4',
+                mimeTypes: 'image/*,application/pdf,audio/mp4,video/mp4'
+            }
+        }
+    });
+
+    fileName参数的名字
