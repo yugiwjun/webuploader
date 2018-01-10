@@ -1,1 +1,88 @@
-demo.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebUploader</title>
+
+    <!-- JQuery需要自己引入 -->
+    <script src="./jquery-2.1.1.js"></script>
+
+    <!-- WebUploader Begin -->
+    <!-- 相对于根目录的路径 -->
+    <script type="text/javascript">var SITE_URL = ".";</script>
+    <!-- 样式文件，非官方 -->
+    <link rel="stylesheet" href="./css/webuploader.min.css">
+    <!-- 二次封装，非官方 -->
+    <script src="./js/myWebuploader.js"></script>
+    <!-- 官方控件文件 -->
+    <script src="./js/webuploader.min.js"></script>
+    <!-- WebUploader End -->
+</head>
+<body>
+
+<!-- 上传文件 -->
+<div id="uploader"></div>
+
+<hr>
+
+<!-- 上传图片 -->
+<div id="uploaderImage"></div>
+
+</body>
+
+<style type="text/css">
+    /*图片的容器大小*/
+    #uploaderImage .thumbnail {
+        height: 200px;
+        width: 140px;
+    }
+</style>
+
+<script type="text/javascript">
+
+$(function() {
+    // 初始化上传控件
+    $("#uploader").empty();
+    var uploader = $("#uploader").powerWebUpload({
+        // 是否自动上传
+        auto: false,
+        // 隐藏域name的名字，随意
+        fileName: 'jFile',
+        // 最大个数
+        fileNumLimit: 10,
+        // 最大尺寸
+        fileSingleSizeLimit: 500*1024*1024,
+        innerOptions:{
+            // 类型限制
+            accept: {
+                title: 'Files',
+                extensions: 'gif,jpg,jpeg,bmp,png,pdf,mp4',
+                mimeTypes: 'image/*,application/pdf,audio/mp4,video/mp4'
+            }
+        }
+    });
+
+
+    // 初始化上传控件
+    $("#uploaderImage").empty();
+    var uploader = $("#uploaderImage").powerWebUpload({
+        // 是否预览
+        preview: true,
+        // 缩略图大小
+        thumbnailWidth : 140,
+        thumbnailHeight : 200,
+        // 是否自动上传
+        auto: true,
+        fileName: 'image',
+        fileNumLimit: 20,
+        innerOptions:{
+            accept: {
+                title: 'Images',
+                extensions: 'gif,jpg,jpeg,bmp,png',
+                mimeTypes: 'image/*'
+            }
+        }
+    });
+});
+</script>
+</html>
