@@ -1,16 +1,16 @@
-# WebUploader
-## 效果如下
+# WebUploader结合PHP使用说明
+## 使用背景
 
-> 例图
+> WebUploader是一款非常吊的上传控件，基本可以解决你所遇到的大多上传问题。可以多附件上传，大附件可以切片上传。还可以自己定制想要的功能，如果你能把这款插件打穿，上传在无压力！
 
 ![](https://github.com/yugiwjun/webuploader/blob/master/example.png)
 
 ## 使用教程
 
 1.把文件夹解压缩后，放置文件夹到安装完成的PHP环境WEB根目录下，或者通过设置
-    <!-- 相对于根目录的路径 -->
+    ```shell
+    <!-- Web根目录到webuploader文件下的路径 -->
     <script type="text/javascript">var SITE_URL = ".";</script>
-    放置在自定义的目录下
 
     <!-- 样式文件，非官方 -->
     <link rel="stylesheet" href="./css/webuploader.min.css">
@@ -18,8 +18,8 @@
     <script src="./js/myWebuploader.js"></script>
     <!-- 官方控件文件 -->
     <script src="./js/webuploader.min.js"></script>
-    <!-- WebUploader End -->
-    正确的引入进来
+    ```
+
 
 2.访问index.html就可以实现例图的效果了
 
