@@ -8,11 +8,10 @@
 ## 使用教程
 
 1.把文件夹解压缩后，放置文件夹到安装完成的PHP环境WEB根目录下，访问index.html
-
-```shell
 **
 若未放置在根目录下，需要调整一下路径
 **
+```shell
 <!-- Web根目录到webuploader文件下的路径 -->
 <script type="text/javascript">var SITE_URL = ".";</script>
 <!-- 样式文件，非官方 -->
