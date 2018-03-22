@@ -341,6 +341,24 @@
             }
         }
 
+        // 上传文件时触发
+        uploader.on('error',  function (handler) {
+            message="文件不符合要求";
+            switch(handler)
+            {
+                case "Q_EXCEED_NUM_LIMIT" :
+                    message="上传个数超出限制，一次最多上传"+opts.fileNumLimit+"个文件";
+                    break;
+                case "F_EXCEED_SIZE" :
+                    message="上传大小超出限制，请上传"+opts.fileSingleSizeLimit/1024/1024+"M以下的文件";
+                    break;
+                case "Q_TYPE_DENIED" :
+                    message="不允许该类型文件上传";
+                    break;
+            }
+            alert(message+"，请重新选择上传文件！");
+        });
+
         // uploadProgress  上传过程中触发，携带上传进度。
         uploader.on('uploadProgress', function (file, percentage) {
             // 焦点元素
